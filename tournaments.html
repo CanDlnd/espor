@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnuvalar - E-Spor Organizasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </a>
+            </div>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="tournaments.html" class="active">Turnuvalar</a></li>
+                <li><a href="watch.html">İzle</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="login.html" class="login-btn">Giriş Yap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tournaments-page">
+        <section class="tournament-filters">
+            <h2>Turnuvalar</h2>
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>Oyun:</label>
+                    <select id="game-filter">
+                        <option value="all">Tümü</option>
+                        <option value="valorant">Valorant</option>
+                        <option value="cs2">CS2</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Durum:</label>
+                    <select id="status-filter">
+                        <option value="all">Tümü</option>
+                        <option value="active">Aktif</option>
+                        <option value="upcoming">Yaklaşan</option>
+                        <option value="completed">Tamamlanmış</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="active-tournaments">
+            <h3>Aktif Turnuvalar</h3>
+            <div class="tournament-grid">
+                <div class="tournament-card active">
+                    <div class="tournament-banner">
+                        <img src="img/placeholders/tournament1.jpg" alt="Valorant Tournament">
+                        <span class="game-badge">VALORANT</span>
+                        <span class="status-badge">Yakında</span>
+                    </div>
+                    <div class="tournament-info">
+                        <h4>Valorant Masters 2025</h4>
+                        <div class="tournament-details">
+                            <p><i class="fas fa-calendar"></i> 3-10 Mayıs 2025</p>
+                            <p><i class="fas fa-users"></i> 16 Takım</p>
+                            <p><i class="fas fa-trophy"></i> Ödül: ₺100,000</p>
+                        </div>
+                        <a href="tournament-detail.html" class="tournament-btn">Detayları Gör</a>
+                    </div>
+                </div>
+
+                <div class="tournament-card active">
+                    <div class="tournament-banner">
+                        <img src="img/placeholders/tournament2.jpg" alt="CS2 Tournament">
+                        <span class="game-badge">CS2</span>
+                        <span class="status-badge">Yakında</span>
+                    </div>
+                    <div class="tournament-info">
+                        <h4>CS2 Pro League Season 1</h4>
+                        <div class="tournament-details">
+                            <p><i class="fas fa-calendar"></i> 1-15 Mayıs 2025</p>
+                            <p><i class="fas fa-users"></i> 12 Takım</p>
+                            <p><i class="fas fa-trophy"></i> Ödül: ₺75,000</p>
+                        </div>
+                        <a href="tournament-detail.html" class="tournament-btn">Detayları Gör</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-tournaments">
+            <h3>Yaklaşan Turnuvalar</h3>
+            <div class="tournament-grid">
+                <div class="tournament-card upcoming">
+                    <div class="tournament-banner">
+                        <img src="img/placeholders/tournament3.jpg" alt="Valorant Tournament">
+                        <span class="game-badge">Valorant</span>
+                        <span class="status-badge upcoming">Yaklaşan</span>
+                    </div>
+                    <div class="tournament-info">
+                        <h4>Valorant Summer Cup 2025</h4>
+                        <div class="tournament-details">
+                            <p><i class="fas fa-calendar"></i> 1-7 Haziran 2025</p>
+                            <p><i class="fas fa-users"></i> 8 Takım</p>
+                            <p><i class="fas fa-trophy"></i> Ödül: ₺50,000</p>
+                        </div>
+                        <a href="#" class="tournament-btn register">Kayıt Ol</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </div>
+                <p>Profesyonel e-spor turnuvaları ve organizasyonları</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="tournaments.html">Turnuvalar</a></li>
+                    <li><a href="watch.html">İzle</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Spor Organizasyon. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

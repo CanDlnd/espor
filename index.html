@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Spor Organizasyon - Valorant & CS2 Turnuvaları</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </a>
+            </div>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Anasayfa</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="watch.html">İzle</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li id="auth-menu">
+                    <a href="login.html" class="login-btn">Giriş Yap</a>
+                </li>
+            </ul>
+        </nav>
+
+        <script>
+            // Kullanıcı durumuna göre menü güncelleme
+            const token = localStorage.getItem('userToken');
+            const userName = localStorage.getItem('userName');
+            const userRole = localStorage.getItem('userRole');
+            const authMenu = document.getElementById('auth-menu');
+
+            if (token) {
+                let menuHtml = `<span class="user-name">Hoş geldin, ${userName}</span>`;
+
+                if (userRole === 'admin') {
+                    menuHtml += ` | <a href="admin.html" class="admin-link">Admin Panel</a>`;
+                }
+
+                menuHtml += ` | <a href="#" onclick="logout()">Çıkış Yap</a>`;
+                authMenu.innerHTML = menuHtml;
+            }
+
+            function logout() {
+                localStorage.removeItem('userToken');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userRole');
+                window.location.href = '/login.html';
+            }
+        </script>
+    </header>
+
+    <main>
+        <!-- Live Tournament Section -->
+        <section class="live-tournament">
+            <div class="live-badge">CANLI</div>
+            <div class="scoreboard">
+                <div class="team team-left">
+                    <img src="img/placeholders/team1.png" alt="Team 1" class="team-logo">
+                    <h3>Team Alpha</h3>
+                    <span class="score">13</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team team-right">
+                    <img src="img/placeholders/team2.png" alt="Team 2" class="team-logo">
+                    <h3>Team Beta</h3>
+                    <span class="score">11</span>
+                </div>
+            </div>
+            <a href="watch.html" class="watch-now-btn">Şimdi İzle</a>
+        </section>
+
+        <!-- Past Tournaments Section -->
+        <section class="past-tournaments">
+            <h2>Geçmiş Turnuvalar</h2>
+            <div class="tournament-grid">
+                <div class="tournament-card">
+                    <img src="img/placeholders/tournament1.jpg" alt="Valorant Tournament">
+                    <div class="tournament-info">
+                        <h3>Valorant Spring Cup 2025</h3>
+                        <p>Kazanan: Team Alpha</p>
+                        <span class="date">25 Nisan 2025</span>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <img src="img/placeholders/tournament2.jpg" alt="CS2 Tournament">
+                    <div class="tournament-info">
+                        <h3>CS2 Masters 2025</h3>
+                        <p>Kazanan: Team Omega</p>
+                        <span class="date">15 Nisan 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>Organizasyonumuz Hakkında</h2>
+            <div class="about-content">
+                <p>Türkiye'nin en büyük e-spor organizasyonlarından biri olarak, Valorant ve CS2 oyunlarında profesyonel
+                    turnuvalar düzenliyoruz. Amacımız, e-spor tutkunlarını bir araya getirmek ve yetenekli oyunculara
+                    kendilerini gösterme fırsatı sunmaktır.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="number">50+</span>
+                        <span class="label">Turnuva</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">1000+</span>
+                        <span class="label">Oyuncu</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">100K+</span>
+                        <span class="label">İzleyici</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </div>
+                <p>Profesyonel e-spor turnuvaları ve organizasyonları</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="tournaments.html">Turnuvalar</a></li>
+                    <li><a href="watch.html">İzle</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Spor Organizasyon. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

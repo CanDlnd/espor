@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnuvaları İzle - E-Spor Organizasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </a>
+            </div>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="watch.html" class="active">İzle</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="login.html" class="login-btn">Giriş Yap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="watch-page">
+        <div class="featured-stream">
+            <div class="stream-container">
+                <div class="stream-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Yayın başlatılıyor...</p>
+                </div>
+                <div class="stream-info">
+                    <div class="stream-header">
+                        <h1>VALORANT Şampiyonlar Ligi - Yarı Final</h1>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            CANLI
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <div class="team">
+                            <img src="img/placeholders/team1.png" alt="Team 1">
+                            <span>Fenerbahçe Esports</span>
+                        </div>
+                        <div class="score">
+                            <span>2</span>
+                            <span>VS</span>
+                            <span>1</span>
+                        </div>
+                        <div class="team">
+                            <img src="img/placeholders/team2.png" alt="Team 2">
+                            <span>BBL Esports</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="streams-section">
+            <div class="streams-header">
+                <h2>Aktif Yayınlar</h2>
+                <div class="stream-filters">
+                    <button class="filter-btn active" data-game="all">Tümü</button>
+                    <button class="filter-btn" data-game="valorant">VALORANT</button>
+                    <button class="filter-btn" data-game="cs2">CS2</button>
+                </div>
+            </div>
+
+            <div class="streams-grid">
+                <div class="stream-card">
+                    <div class="stream-thumbnail">
+                        <img src="img/placeholders/stream1.jpg" alt="Stream 1">
+                        <div class="live-badge">CANLI</div>
+                        <div class="viewer-count">
+                            <i class="fas fa-user"></i>
+                            12.5K
+                        </div>
+                    </div>
+                    <div class="stream-content">
+                        <h3>CS2 Türkiye Kupası - Çeyrek Final</h3>
+                        <div class="stream-meta">
+                            <span class="game-tag">CS2</span>
+                            <span class="match-stage">Çeyrek Final</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stream-card">
+                    <div class="stream-thumbnail">
+                        <img src="img/placeholders/stream2.jpg" alt="Stream 2">
+                        <div class="live-badge">CANLI</div>
+                        <div class="viewer-count">
+                            <i class="fas fa-user"></i>
+                            8.2K
+                        </div>
+                    </div>
+                    <div class="stream-content">
+                        <h3>VALORANT Challengers - Grup Maçı</h3>
+                        <div class="stream-meta">
+                            <span class="game-tag">VALORANT</span>
+                            <span class="match-stage">Grup B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stream-card upcoming">
+                    <div class="stream-thumbnail">
+                        <img src="img/placeholders/stream3.jpg" alt="Stream 3">
+                        <div class="upcoming-badge">YAKINDA</div>
+                        <div class="start-time">
+                            <i class="fas fa-clock"></i>
+                            2 Saat
+                        </div>
+                    </div>
+                    <div class="stream-content">
+                        <h3>CS2 Pro League - Final</h3>
+                        <div class="stream-meta">
+                            <span class="game-tag">CS2</span>
+                            <span class="match-stage">Final</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="load-more-btn">
+                Daha Fazla Yayın
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <section class="schedule-section">
+            <h2>Yayın Programı</h2>
+            <div class="schedule-container">
+                <div class="schedule-day">
+                    <h3>Bugün</h3>
+                    <div class="schedule-matches">
+                        <div class="schedule-match">
+                            <div class="match-time">20:00</div>
+                            <div class="match-details">
+                                <span class="game-type">VALORANT</span>
+                                <h4>Şampiyonlar Ligi Final</h4>
+                                <div class="match-teams">Team A vs Team B</div>
+                            </div>
+                            <button class="reminder-btn">
+                                <i class="far fa-bell"></i>
+                                Hatırlat
+                            </button>
+                        </div>
+                        <div class="schedule-match">
+                            <div class="match-time">22:30</div>
+                            <div class="match-details">
+                                <span class="game-type">CS2</span>
+                                <h4>Pro League Yarı Final</h4>
+                                <div class="match-teams">Team C vs Team D</div>
+                            </div>
+                            <button class="reminder-btn">
+                                <i class="far fa-bell"></i>
+                                Hatırlat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <h3>Yarın</h3>
+                    <div class="schedule-matches">
+                        <div class="schedule-match">
+                            <div class="match-time">19:00</div>
+                            <div class="match-details">
+                                <span class="game-type">CS2</span>
+                                <h4>Türkiye Kupası Final</h4>
+                                <div class="match-teams">Team E vs Team F</div>
+                            </div>
+                            <button class="reminder-btn">
+                                <i class="far fa-bell"></i>
+                                Hatırlat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </div>
+                <p>Profesyonel e-spor turnuvaları ve organizasyonları</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="tournaments.html">Turnuvalar</a></li>
+                    <li><a href="watch.html">İzle</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Spor Organizasyon. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Stream filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                // Add filter logic here when connected to backend
+            });
+        });
+
+        // Reminder button functionality
+        document.querySelectorAll('.reminder-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const icon = button.querySelector('i');
+                if (button.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    button.innerHTML = '<i class="fas fa-bell"></i> Hatırlatılacak';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    button.innerHTML = '<i class="far fa-bell"></i> Hatırlat';
+                }
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

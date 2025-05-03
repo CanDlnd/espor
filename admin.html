@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - E-Spor Organizasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 1rem;
+        }
+
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .users-table th,
+        .users-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .users-table th {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .delete-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="admin.html" class="active">Admin Panel</a></li>
+                <li><a href="#" id="logout-btn">Çıkış Yap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <h1>Kullanıcı Yönetimi</h1>
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>E-posta</th>
+                    <th>Rol</th>
+                    <th>Kayıt Tarihi</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody id="users-table-body">
+                <!-- Kullanıcılar JavaScript ile buraya eklenecek -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // Token ve rol kontrolü
+        const token = localStorage.getItem('userToken');
+        const userRole = localStorage.getItem('userRole');
+
+        if (!token || userRole !== 'admin') {
+            alert('Bu sayfaya erişim yetkiniz yok!');
+            window.location.href = '/login.html';
+        }
+
+        // Kullanıcıları getir
+        async function fetchUsers() {
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/users', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401) {
+                    // Token geçersiz, login sayfasına yönlendir
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                const users = await response.json();
+                const tableBody = document.getElementById('users-table-body');
+                tableBody.innerHTML = '';
+
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>${user.role}</td>
+                        <td>${new Date(user.createdAt).toLocaleDateString()}</td>
+                        <td>
+                            <button class="delete-btn" onclick="deleteUser('${user._id}')">Sil</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Kullanıcılar getirilirken hata:', error);
+                alert('Kullanıcılar getirilirken bir hata oluştu');
+            }
+        }
+
+        // Kullanıcı sil
+        async function deleteUser(userId) {
+            if (!confirm('Bu kullanıcıyı silmek istediğinizden emin misiniz?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/admin/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Kullanıcı başarıyla silindi');
+                    fetchUsers(); // Tabloyu güncelle
+                } else {
+                    alert('Kullanıcı silinirken bir hata oluştu');
+                }
+            } catch (error) {
+                console.error('Kullanıcı silinirken hata:', error);
+                alert('Kullanıcı silinirken bir hata oluştu');
+            }
+        }
+
+        // Çıkış yap
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('userToken');
+            localStorage.removeItem('userName');
+            window.location.href = '/login.html';
+        });
+
+        // Sayfa yüklendiğinde kullanıcıları getir
+        fetchUsers();
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+
+</html>

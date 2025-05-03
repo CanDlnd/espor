@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - E-Spor Organizasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="watch.html">İzle</a></li>
+                <li><a href="contact.html" class="active">İletişim</a></li>
+                <li><a href="login.html" class="login-btn">Giriş Yap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <div class="contact-header">
+            <h1>İletişime Geçin</h1>
+            <p>Sorularınız, önerileriniz veya işbirliği teklifleriniz için bizimle iletişime geçebilirsiniz.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-posta</h3>
+                    <p>info@espororg.com</p>
+                    <p>support@espororg.com</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefon</h3>
+                    <p>+90 (212) XXX XX XX</p>
+                    <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-location-dot"></i>
+                    <h3>Adres</h3>
+                    <p>E-Spor Merkezi</p>
+                    <p>İstanbul, Türkiye</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-comments"></i>
+                    <h3>Sosyal Medya</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Mesaj Gönderin</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Konu</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Seçiniz</option>
+                            <option value="general">Genel Bilgi</option>
+                            <option value="tournament">Turnuva Bilgisi</option>
+                            <option value="sponsorship">Sponsorluk</option>
+                            <option value="support">Teknik Destek</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gönder</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>Turnuvalara nasıl katılabilirim?</h3>
+                    <p>Turnuvalara katılmak için öncelikle bir hesap oluşturmanız ve takımınızı kaydetmeniz
+                        gerekmektedir. Ardından aktif turnuvalardan size uygun olanı seçerek kayıt olabilirsiniz.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Turnuva ödülleri nasıl dağıtılıyor?</h3>
+                    <p>Turnuva ödülleri, turnuva sonunda belirlenen sıralamaya göre takımlara dağıtılmaktadır. Ödül
+                        dağılımı her turnuvanın detay sayfasında belirtilmektedir.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Teknik sorunlar yaşarsam ne yapmalıyım?</h3>
+                    <p>Teknik sorunlar için support@espororg.com adresine e-posta gönderebilir veya Discord sunucumuza
+                        katılarak destek alabilirsiniz.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="img/placeholders/logo.png" alt="E-Spor Logo">
+                </div>
+                <p>Profesyonel e-spor turnuvaları ve organizasyonları</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="tournaments.html">Turnuvalar</a></li>
+                    <li><a href="watch.html">İzle</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Spor Organizasyon. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
